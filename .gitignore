@@ -12,6 +12,6 @@ npm-debug.log
 *.swo
 *.log
 examples/dist/
-dist/
+#dist/
 doc/
 *.jpg
