@@ -14,7 +14,7 @@ gulp.task('css', function () {
         .pipe(gulp.dest('../dist/styles'));
 });
 
-gulp.task('px2rem',function () {
+gulp.task('px2rem',['css'],function () {
     gulp.src('../dist/styles/index.css')
         .pipe(px2rem())
         .pipe(rename('index.debug.css'))
@@ -25,4 +25,4 @@ gulp.task('watch',function () {
     gulp.watch('../src/styles/*.less',['css'])
 });
 
-gulp.task('default', ['watch','px2rem']);
+gulp.task('default', ['css','watch','px2rem']);
