@@ -7,7 +7,7 @@ var px2rem = require('gulp-px2rem');
 
 // 编译less
 gulp.task('css', function () {
-    gulp.src('../src/styles/index.less')
+   return gulp.src('../src/styles/index.less')
         .pipe(less())
         .pipe(cleanCSS())
         .pipe(rename('index.css'))
@@ -21,8 +21,7 @@ gulp.task('px2rem',['css'],function () {
         .pipe(gulp.dest('../dist/styles'));
 });
 
-gulp.task('watch',function () {
-    gulp.watch('../src/styles/*.less',['css'])
+gulp.task('watch',['css'],function () {
+    gulp.watch('../src/styles/*.less',['css','px2rem'])
 });
-
-gulp.task('default', ['css','watch','px2rem']);
+gulp.task('default', ['watch']);
