@@ -4,9 +4,9 @@
   "description": "",
   "scripts": {
     "start": "webpack-dev-server --content-base --open --inline --hot --compress --history-api-fallback --port 9090 --config webpack.dev.config.js",
-    "build:style": "gulp --gulpfile build/gulpfile.js",
-    "dev": "npm run build:style & npm run start",
-    "release":"npm run build:style  & webpack --config webpack.release.config.js"
+    "build": "gulp --gulpfile build/gulpfile.js",
+    "dev": "npm run build & npm run start",
+    "release": " webpack --config webpack.release.config.js && npm run build"
   },
   "author": "",
   "license": "ISC",
@@ -23,6 +23,7 @@
     "gulp-marked": "^1.0.0",
     "gulp-px2rem": "^1.0.11",
     "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0",
     "gulp-watch": "^4.3.11",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",

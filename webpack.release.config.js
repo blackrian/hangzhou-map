@@ -8,7 +8,7 @@ module.exports = {
     },
     output: {
         path: path.join(__dirname, './dist'),
-        filename: 'index.min.js'
+        filename: 'index.js'
     },
     module: {
         rules: [{
